@@ -1,0 +1,6 @@
+framework module Pods_UserDefaultsWrapper_Tests {
+  umbrella header "Pods-UserDefaultsWrapper_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

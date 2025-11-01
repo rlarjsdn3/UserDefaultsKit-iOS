@@ -1,0 +1,16 @@
+PODS:
+  - UserDefaultsWrapper (0.1.0)
+
+DEPENDENCIES:
+  - UserDefaultsWrapper (from `../`)
+
+EXTERNAL SOURCES:
+  UserDefaultsWrapper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UserDefaultsWrapper: 8d10733f26c4e9e719d09c0eae22e5c61552c724
+
+PODFILE CHECKSUM: 9d42c825a2e620061d08e9a26fc5ec474906821c
+
+COCOAPODS: 1.16.2
