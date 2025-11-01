@@ -1,0 +1,6 @@
+framework module UserDefaultsWrapper {
+  umbrella header "UserDefaultsWrapper-umbrella.h"
+
+  export *
+  module * { export * }
+}
