@@ -25,8 +25,8 @@ final public class UserDefaultsWrapper: @unchecked Sendable {
     }
     
     ///
-    public init(suitName: String) {
-        userDefaults = UserDefaults(suiteName: suitName)
+    public init(suiteName: String) {
+        userDefaults = UserDefaults(suiteName: suiteName)
     }
     
     
@@ -46,7 +46,11 @@ final public class UserDefaultsWrapper: @unchecked Sendable {
     
     ///
     public func get<Value>(forKey key: String) -> Value? where Value: Codable {
-        userDefaults.object(forKey: key) as? Value
+        guard
+            let data = userDefaults.object(forKey: key) as? Data,
+            let decoded = try? JSONDecoder().decode(Value.self, from: data)
+        else { return nil }
+        return decoded
     }
     
     
@@ -66,7 +70,9 @@ final public class UserDefaultsWrapper: @unchecked Sendable {
         _ value: Value?,
         forKey key: String
     ) where Value: Codable {
-        userDefaults.set(value, forKey: key)
+        guard let encoded = try? JSONEncoder().encode(value)
+        else { return }
+        userDefaults.set(encoded, forKey: key)
     }
     
     
@@ -93,7 +99,7 @@ final public class UserDefaultsWrapper: @unchecked Sendable {
 extension UserDefaultsWrapper {
     
     ///
-    public subscript<Value>(dynamicMember keyPath: KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<Value>>) -> Value? where Value: Codable {
+    public subscript<Value>(dynamicMember keyPath: KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<Value>>) -> Value where Value: Codable {
         get { get(forKey: keyPath) }
         set { set(newValue, forKey: keyPath) }
     }
