@@ -13,6 +13,10 @@
 		C7279A922EB5AB810018102D /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7279A912EB5AB810018102D /* UserDefaultsWrapper.swift */; };
 		C7279A9B2EB5ADEB0018102D /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7279A992EB5ADEB0018102D /* UserDefaultsWrapper.swift */; };
 		C7279A9C2EB5ADEB0018102D /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7279A992EB5ADEB0018102D /* UserDefaultsWrapper.swift */; };
+		C7279AA22EB5B32A0018102D /* UserDefaultsWrapperKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7279AA12EB5B32A0018102D /* UserDefaultsWrapperKey.swift */; };
+		C7279AA32EB5B32A0018102D /* UserDefaultsWrapperKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7279AA12EB5B32A0018102D /* UserDefaultsWrapperKey.swift */; };
+		C7279AA52EB5B3300018102D /* UserDefaultsWrapperKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7279AA42EB5B3300018102D /* UserDefaultsWrapperKeys.swift */; };
+		C7279AA62EB5B3300018102D /* UserDefaultsWrapperKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7279AA42EB5B3300018102D /* UserDefaultsWrapperKeys.swift */; };
 		CC71CA0C9692A3F4323A8DD248CA142B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		F17C44354FD068079D7789060F8F505C /* UserDefaultsWrapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B8ACC878B89C4B442FA6BC0060D0C /* UserDefaultsWrapper-dummy.m */; };
 		F1895C93A9F3EDABD16C8E539BE81BCC /* UserDefaultsWrapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C4A122066A0206790092CD0CA9AD0E /* UserDefaultsWrapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,6 +55,8 @@
 		A189F23E73DC7066C4F6A75332608320 /* Pods-UserDefaultsWrapper_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UserDefaultsWrapper_Tests-dummy.m"; sourceTree = "<group>"; };
 		C7279A912EB5AB810018102D /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		C7279A992EB5ADEB0018102D /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		C7279AA12EB5B32A0018102D /* UserDefaultsWrapperKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapperKey.swift; sourceTree = "<group>"; };
+		C7279AA42EB5B3300018102D /* UserDefaultsWrapperKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapperKeys.swift; sourceTree = "<group>"; };
 		CDB6D54A175661A153EE1456FB816129 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D134FF262D7694C114E7976E68C3F360 /* Pods-UserDefaultsWrapper_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UserDefaultsWrapper_Tests-Info.plist"; sourceTree = "<group>"; };
 		DFD3F25200912652EF06D1038C9615E1 /* Pods-UserDefaultsWrapper_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UserDefaultsWrapper_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				C7279A992EB5ADEB0018102D /* UserDefaultsWrapper.swift */,
+				C7279AA12EB5B32A0018102D /* UserDefaultsWrapperKey.swift */,
+				C7279AA42EB5B3300018102D /* UserDefaultsWrapperKeys.swift */,
 			);
 			name = Sources;
 			path = ../../Sources;
@@ -305,6 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7279AA62EB5B3300018102D /* UserDefaultsWrapperKeys.swift in Sources */,
+				C7279AA32EB5B32A0018102D /* UserDefaultsWrapperKey.swift in Sources */,
 				C7279A9C2EB5ADEB0018102D /* UserDefaultsWrapper.swift in Sources */,
 				F17C44354FD068079D7789060F8F505C /* UserDefaultsWrapper-dummy.m in Sources */,
 			);
@@ -314,7 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7279AA22EB5B32A0018102D /* UserDefaultsWrapperKey.swift in Sources */,
 				C7279A922EB5AB810018102D /* UserDefaultsWrapper.swift in Sources */,
+				C7279AA52EB5B3300018102D /* UserDefaultsWrapperKeys.swift in Sources */,
 				C7279A9B2EB5ADEB0018102D /* UserDefaultsWrapper.swift in Sources */,
 				128C281C4AA41EAAD63BA91E2A1E0C62 /* Pods-UserDefaultsWrapper_Tests-dummy.m in Sources */,
 			);
@@ -436,8 +448,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -538,8 +552,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
