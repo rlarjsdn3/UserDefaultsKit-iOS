@@ -1,5 +1,5 @@
 //
-//  MockResponse.swift
+//  CodableResponse.swift
 //  UserDefaultsWrapper_Tests
 //
 //  Created by 김건우 on 11/1/25.
@@ -8,6 +8,9 @@
 
 import Foundation
 
-struct MockResponse: Codable {
-    var mock: String = "Mock"
+struct CodableResponse: Codable {
+    var name: String
+}
+
+extension CodableResponse: Equatable {
 }
