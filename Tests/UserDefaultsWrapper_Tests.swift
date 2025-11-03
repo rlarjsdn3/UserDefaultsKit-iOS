@@ -323,30 +323,3 @@ final class UserDefaultsWrapper_Tests {
     }
     
 }
-
-fileprivate extension UserDefaultsWrapperKeys {
-    
-    var intValue: UserDefaultsWrapperKey<Int> {
-        UserDefaultsWrapperKey(name: "IntValue", default: 0)
-    }
-    
-    var floatValue: UserDefaultsWrapperKey<Float> {
-        UserDefaultsWrapperKey(name: "FloatValue", default: 0.0)
-    }
-    
-    var doubleValue: UserDefaultsWrapperKey<Double> {
-        UserDefaultsWrapperKey(name: "DoubleValue", default: 0.0)
-    }
-    
-    var stringValue: UserDefaultsWrapperKey<String> {
-        UserDefaultsWrapperKey(name: "StringValue", default: "none")
-    }
-    
-    var boolValue: UserDefaultsWrapperKey<Bool> {
-        UserDefaultsWrapperKey(name: "BoolValue", default: true)
-    }
-    
-    var codableValue: UserDefaultsWrapperKey<CodableResponse?> {
-        UserDefaultsWrapperKey(name: "CodableValue", default: nil)
-    }
-}

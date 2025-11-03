@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AAA1C7E8E5F7E44576601671 /* Pods_UserDefaultsWrapper_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25D55ECB473FFCA81AB7637 /* Pods_UserDefaultsWrapper_Tests.framework */; };
 		C7279A982EB5ACD00018102D /* UserDefaultsWrapper_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7279A972EB5ACD00018102D /* UserDefaultsWrapper_Tests.swift */; };
+		C7FE0CC52EB8497B00834C31 /* UserDefaultsWrapper+PropertyWrapper_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE0CC42EB8497B00834C31 /* UserDefaultsWrapper+PropertyWrapper_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,13 +20,13 @@
 		C25D55ECB473FFCA81AB7637 /* Pods_UserDefaultsWrapper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserDefaultsWrapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51CD6C27170A345A967FFFD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C7279A942EB5AC8D0018102D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7279A962EB5ACD00018102D /* UserDefaultsWrapper_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserDefaultsWrapper_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7279A972EB5ACD00018102D /* UserDefaultsWrapper_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper_Tests.swift; sourceTree = "<group>"; };
+		C7FE0CC42EB8497B00834C31 /* UserDefaultsWrapper+PropertyWrapper_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaultsWrapper+PropertyWrapper_Tests.swift"; sourceTree = "<group>"; };
 		EDAD10E24A1E71A24F8EFA5E /* Pods-UserDefaultsWrapper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserDefaultsWrapper_Tests.release.xcconfig"; path = "Target Support Files/Pods-UserDefaultsWrapper_Tests/Pods-UserDefaultsWrapper_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C7279AAF2EB5BF610018102D /* Mock */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Mock; sourceTree = "<group>"; };
+		C7279AAF2EB5BF610018102D /* Utils */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utils; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +82,9 @@
 		C7279A932EB5ABD50018102D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C7279AAF2EB5BF610018102D /* Mock */,
+				C7279AAF2EB5BF610018102D /* Utils */,
 				C7279A972EB5ACD00018102D /* UserDefaultsWrapper_Tests.swift */,
-				C7279A962EB5ACD00018102D /* UserDefaultsWrapper_Tests-Bridging-Header.h */,
+				C7FE0CC42EB8497B00834C31 /* UserDefaultsWrapper+PropertyWrapper_Tests.swift */,
 			);
 			name = Tests;
 			path = ../Tests;
@@ -116,7 +117,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				C7279AAF2EB5BF610018102D /* Mock */,
+				C7279AAF2EB5BF610018102D /* Utils */,
 			);
 			name = UserDefaultsWrapper_Tests;
 			productName = Tests;
@@ -217,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7FE0CC52EB8497B00834C31 /* UserDefaultsWrapper+PropertyWrapper_Tests.swift in Sources */,
 				C7279A982EB5ACD00018102D /* UserDefaultsWrapper_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +349,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "../Tests/UserDefaultsWrapper_Tests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -373,7 +375,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "../Tests/UserDefaultsWrapper_Tests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
