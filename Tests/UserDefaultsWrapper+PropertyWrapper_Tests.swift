@@ -24,20 +24,20 @@ final class UserDefaultsWrapper_PropertyWrapper_Tests {
     
     @Test
     func test_WhenGetValueFromPropertyWrapper_ThenReturnDefaultValue() {
-        @AppStorage(\.intValue, store: sut) var intValue: Int
+        @UserDefaultsValue(\.intValue, store: sut) var intValue: Int
         #expect(intValue == 0)
     }
     
     @Test
     func test_WhenGetValueFromPropertyWrapperAndSetNewValue_ThenReturnNewValue() {
-        @AppStorage(\.intValue, store: sut) var intValue: Int
+        @UserDefaultsValue(\.intValue, store: sut) var intValue: Int
         intValue = 100
         #expect(intValue == 100)
     }
     
     @Test
     func test_WhenSetValueImmediatelyAfterDeclared_ThenReturnNewValue() {
-        @AppStorage(\.intValue, store: sut) var intValue: Int = 123
+        @UserDefaultsValue(\.intValue, store: sut) var intValue: Int = 123
         #expect(intValue == 123)
     }
 }

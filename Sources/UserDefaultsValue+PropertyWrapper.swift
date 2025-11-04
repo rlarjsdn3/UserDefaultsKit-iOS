@@ -7,12 +7,11 @@
 
 import Foundation
 
-///
 @propertyWrapper
-public struct AppStorage<Value> where Value: Codable {
+public struct UserDefaultsValue<Value> where Value: Codable {
     
-    let store: UserDefaultsWrapper
-    let keyPath: KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<Value>>
+    private let store: UserDefaultsWrapper
+    private let keyPath: KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<Value>>
     
     public init(
         _ keyPath: KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<Value>>,
