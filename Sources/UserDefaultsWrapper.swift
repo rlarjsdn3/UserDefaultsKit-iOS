@@ -55,6 +55,16 @@ final public class UserDefaultsWrapper: @unchecked Sendable {
         return get(forKey: key.name) ?? key.default
     }
     
+    /// Retrieves multiple stored values from `UserDefaults` using the specified key paths.
+    ///
+    /// - Parameter keyPaths: A parameter pack of key paths, each pointing to a `UserDefaultsWrapperKey` defined in `UserDefaultsWrapperKeys`.
+    /// - Returns: A tuple containing the corresponding values for each provided key path.
+    ///
+    ///  Each generic `Value` type must conform to `Codable`.
+    public func get<each Value>(forKey keyPaths: repeat KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<each Value>>) -> (repeat each Value) where repeat each Value: Codable {
+        return (repeat get(forKey: each keyPaths))
+    }
+    
     private func get<Value>(forKey key: String) -> Value? where Value: Codable {
         guard
             let data = userDefaults.object(forKey: key) as? Data,
@@ -81,6 +91,21 @@ final public class UserDefaultsWrapper: @unchecked Sendable {
         set(value, forKey: key.name)
     }
     
+    /// Stores multiple values in `UserDefaults` for the specified key paths.
+    ///
+    /// - Parameters:
+    ///   - values: A parameter pack of values to store. Each value corresponds to a key path in the same order.
+    ///     Pass `nil` for any value to remove the existing entry for that key.
+    ///   - keyPaths: A paramter pack of key paths, each pointing to a `UserDefaultsWrapperKey` defined in `UserDefaultsWrapperKeys`.
+    ///
+    /// Each generic `Value` type must conform to `Codable`.
+    public func set<each Value>(
+        _ values: repeat (each Value)?,
+        forKey keyPaths: repeat KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<each Value>>,
+    ) where repeat each Value: Codable {
+        (repeat set(each values, forKey: each keyPaths))
+    }
+    
     private func set<Value>(
         _ value: Value?,
         forKey key: String
@@ -101,6 +126,15 @@ final public class UserDefaultsWrapper: @unchecked Sendable {
     public func remove<Value>(forKey keyPath: KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<Value>>) {
         let key = UserDefaultsWrapperKeys()[keyPath: keyPath]
         remove(forKey: key.name)
+    }
+    
+    /// Removes multiple stored values from `UserDefaults` for the specified key paths.
+    ///
+    /// - Parameter keyPaths: A parameter pack of key paths, each pointing to a `UserDefaultsWrapperKey` defined in `UserDefaultsWrapperKeys`.
+    ///
+    /// Each key path corresponds to a unique key, and all matching values will be removed.
+    public func remove<each Value>(forKey keyPaths: repeat KeyPath<UserDefaultsWrapperKeys, UserDefaultsWrapperKey<each Value>>) {
+        (repeat remove(forKey: each keyPaths))
     }
     
     private func remove(forKey key: String) {

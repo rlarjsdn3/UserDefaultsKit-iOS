@@ -9,8 +9,46 @@
 import Testing
 @testable import UserDefaultsWrapper
 
+@Suite(.serialized)
 final class UserDefaultsWrapper_Tests {
 
+    @Test
+    func test_WhenGetValuesWithParameterPack_ThenReturnProperValues() {
+        let sut = UserDefaultsWrapper(suiteName: "com.UserDefaultsWrapper.Tests")
+        defer { sut.removeAll() }
+        
+        sut.intValue = 100
+        sut.doubleValue = 12.3
+        
+        let (intValue, doubleValue) = sut.get(forKey: \.intValue, \.doubleValue)
+        #expect(intValue == 100)
+        #expect(doubleValue == 12.3)
+    }
+    
+    @Test
+    func test_WhenSetValuesWithParameterPack_ThenReturnNewValues() {
+        let sut = UserDefaultsWrapper(suiteName: "com.UserDefaultsWrapper.Tests")
+        defer { sut.removeAll() }
+        
+        sut.set(200, 32.1, forKey: \.intValue, \.doubleValue)
+        
+        #expect(sut.intValue == 200)
+        #expect(sut.doubleValue == 32.1)
+    }
+    
+    @Test
+    func test_WhenRemoveValuesWithParameterPack_ThenClearValues() {
+        let sut = UserDefaultsWrapper(suiteName: "com.UserDefaultsWrapper.Tests")
+        defer { sut.removeAll() }
+        
+        sut.intValue = 300
+        sut.doubleValue = 98.7
+        sut.remove(forKey: \.intValue, \.doubleValue)
+        
+        #expect(sut.intValue == 0)
+        #expect(sut.doubleValue == 0.0)
+    }
+    
     @Test
     func test_WhenRemoveAll_ThenClearAllData() {
         let sut = UserDefaultsWrapper(suiteName: "com.UserDefaultsWrapper.Tests")
@@ -22,7 +60,7 @@ final class UserDefaultsWrapper_Tests {
         sut.stringValue = "12.34"
         sut.boolValue = false
         sut.codableValue = CodableResponse(name: "")
-        
+
         sut.removeAll()
         #expect(sut.intValue == 0)
         #expect(sut.floatValue == 0.0)
