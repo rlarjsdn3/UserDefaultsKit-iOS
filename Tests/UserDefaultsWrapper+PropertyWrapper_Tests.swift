@@ -36,8 +36,11 @@ final class UserDefaultsWrapper_PropertyWrapper_Tests {
     }
     
     @Test
-    func test_WhenSetValueImmediatelyAfterDeclared_ThenReturnNewValue() {
-        @UserDefaultsValue(\.intValue, store: sut) var intValue: Int = 123
-        #expect(intValue == 123)
+    func test_WhenRemoveValueFromPropertyWrapper_ThenClearValue() {
+        @UserDefaultsValue(\.intValue, store: sut) var intValue: Int
+        intValue = 100
+        
+        $intValue.remove()
+        #expect(intValue == 0)
     }
 }
